@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="ticketBookingForm">
+    <label>Booking ID</label>
+<input type="number" name="bookingId"formControlName="bookingId"/>
+<div *ngIf="ticketBookingForm.get('bookingId')?.invalid && ticketBookingForm.get('bookingId')?.touched">
+    <small>Booking ID is required.</small>
+</div>
+<label>Email</label>
+<input type="email" name="email"formControlName="email"/>
+<div *ngIf="ticketBookingForm.get('email')?.invalid && ticketBookingForm.get('email')?.touched">
+    <small>Email is required.</small>
+</div>
+<label>Match ID</label>
+<input type="number" name="matchId"formControlName="matchId"/>
+<div *ngIf="ticketBookingForm.get('matchId')?.invalid && ticketBookingForm.get('matchId')?.touched">
+    <small>Match ID is required.</small>
+</div>
+<label>Number of Tickets</label>
+<input type="text" name="numberOfTickets"formControlName="numberOfTickets"/>
+<div *ngIf="ticketBookingForm.get('numberOfTickets')?.invalid && ticketBookingForm.get('numberOfTickets')?.touched">
+    <small>Number of Tickets is required.</small>
+</div>
+<button type="submit" [disabled]="ticketBookingForm.invalid">Submit</button>
+<button type="button" (click)="resetForm()">Reset</button>
+<div *ngIf="successMessage" class="success">
+    <p>{{successM}}</p></div>
+<div *ngIf="errorMessage" class="error">
+    <p>{{errorM}}</p>
+</div>
+

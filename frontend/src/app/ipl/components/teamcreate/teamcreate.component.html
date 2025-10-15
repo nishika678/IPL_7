@@ -1,0 +1,35 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="teamForm">
+    <label>Team ID</label>
+<input type="number" name="id"formControlName="teamId"/>
+<div *ngIf="teamForm.get('teamId')?.invalid && teamForm.get('teamId')?.touched">
+    <small>Team ID is required.</small>
+</div>
+<label>Team Name</label>
+<input type="text" formControlName="teamName"/>
+<div *ngIf="teamForm.get('teamName')?.invalid && teamForm.get('teamName')?.touched">
+    <small>Team Name is required.</small>
+</div>
+<label>Location</label>
+<input type="text" formControlName="location"/>
+<div *ngIf="teamForm.get('location')?.invalid && teamForm.get('location')?.touched">
+    <small>Location is required.</small>
+</div>
+<label>Owner Name</label>
+<input type="text" formControlName="ownerName"/>
+<div *ngIf="teamForm.get('ownerName')?.invalid && teamForm.get('ownerName')?.touched">
+    <small>Owner Name is required.</small>
+</div>
+<label>Establishment Year</label>
+<input type="number" formControlName="establishmentYear"/>
+<div *ngIf="teamForm.get('establishmentYear')?.invalid && teamForm.get('establishmentYear')?.touched">
+    <small>Enter a valid year</small>
+</div>
+
+<button type="submit" [disabled]="teamForm.invalid">Submit</button>
+<button type="button" (click)="resetForm()">Reset</button>
+<div *ngIf="successM" class="success">
+    <p>{{successM}}</p></div>
+<div *ngIf="errorM" class="error">
+    <p>{{errorM}}</p>
+</div>
+

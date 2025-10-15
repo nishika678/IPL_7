@@ -1,0 +1,35 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="voteForm">
+    <label>Vote ID</label>
+<input type="number" name="voteId"formControlName="voteId"/>
+<div *ngIf="voteForm.get('voteId')?.invalid && voteForm.get('voteId')?.touched">
+    <small>Vote ID is required.</small>
+</div>
+<label>Email</label>
+<input type="text" name="email"formControlName="email"/>
+<div *ngIf="voteForm.get('email')?.invalid && voteForm.get('email')?.touched">
+    <small>Email is required.</small>
+</div>
+<label>category</label>
+<input type="text" name="category"formControlName="category"/>
+<div *ngIf="voteForm.get('category')?.invalid && voteForm.get('category')?.touched">
+    <small>Category is required.</small>
+</div>
+<label>Cricketer ID</label>
+<input type="number" name="cricketerId"formControlName="cricketerId"/>
+<div *ngIf="voteForm.get('cricketerId')?.invalid && voteForm.get('cricketerId')?.touched">
+    <small>Cricketer ID is required.</small>
+</div>
+<label>Team ID</label>
+<input type="number" name="teamId"formControlName="teamId"/>
+<div *ngIf="voteForm.get('teamId')?.invalid && voteForm.get('teamId')?.touched">
+    <small>Team ID is required.</small>
+</div>
+<button type="submit" [disabled]="voteForm.invalid">Submit</button>
+<button type="button" (click)="resetForm()">Reset</button>
+<div *ngIf="successMessage" class="success">
+    <p>{{successM}}</p></div>
+<div *ngIf="errorMessage" class="error">
+    <p>{{errorM}}</p>
+</div>
+
+

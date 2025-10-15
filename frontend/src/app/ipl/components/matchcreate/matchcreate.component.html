@@ -1,0 +1,50 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="matchForm">
+    <label>Match ID</label>
+<input type="number" name="id"formControlName="matchId"/>
+<div *ngIf="matchForm.get('matchId')?.invalid && matchForm.get('matchId')?.touched">
+    <small>Match ID is required.</small>
+</div>
+<label>First Team ID</label>
+<input type="number" name="firstTeamId"formControlName="firstTeamId"/>
+<div *ngIf="matchForm.get('firstTeamId')?.invalid && matchForm.get('firstTeamId')?.touched">
+    <small>First Team ID is required.</small>
+</div>
+<label>Second Team ID</label>
+<input type="number" name="secondTeamId"formControlName="secondTeamId"/>
+<div *ngIf="matchForm.get('secondTeamId')?.invalid && matchForm.get('secondTeamId')?.touched">
+    <small>Second Team ID is required.</small>
+</div>
+<label>Match Date</label>
+<input type="text" name="matchDate"formControlName="matchDate"/>
+<div *ngIf="matchForm.get('matchDate')?.invalid && matchForm.get('matchDate')?.touched">
+    <small>Match Date is required.</small>
+</div>
+<label>Venue</label>
+<input type="text" name="venue"formControlName="venue"/>
+<div *ngIf="matchForm.get('venue')?.invalid && matchForm.get('venue')?.touched">
+    <small>Venue is required.</small>
+</div>
+<label>Result</label>
+<input type="text" name="result"formControlName="result"/>
+<div *ngIf="matchForm.get('result')?.invalid && matchForm.get('result')?.touched">
+    <small>Result is required.</small>
+</div>
+<label>Status</label>
+<input type="text" name="status"formControlName="status"/>
+<div *ngIf="matchForm.get('status')?.invalid && matchForm.get('status')?.touched">
+    <small>status is required.</small>
+</div>
+<label>Winner Team ID</label>
+<input type="number" name="winnerTeamId"formControlName="winnerTeamId"/>
+<div *ngIf="matchForm.get('winnerTeamId')?.invalid && matchForm.get('winnerTeamId')?.touched">
+    <small>Winner Team ID is required.</small>
+</div>
+<button type="submit" [disabled]="matchForm.invalid">Submit</button>
+<button type="button" (click)="resetForm()">Reset</button>
+<div *ngIf="successM" class="success">
+    <p>{{successM}}</p></div>
+<div *ngIf="errorM" class="error">
+    <p>{{errorM}}</p>
+</div>
+
+

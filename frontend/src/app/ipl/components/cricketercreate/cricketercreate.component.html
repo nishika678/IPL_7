@@ -1,0 +1,56 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="cricketerForm">
+    <label>Cricketer ID</label>
+<input type="number" name="cricketerId"formControlName="cricketerId"/>
+<div *ngIf="cricketerForm.get('cricketerId')?.invalid && cricketerForm.get('cricketerId')?.touched">
+    <small>Cricketer ID is required.</small>
+</div>
+<label>Team ID</label>
+<input type="number" name="teamId"formControlName="teamId"/>
+<div *ngIf="cricketerForm.get('teamId')?.invalid && cricketerForm.get('teamId')?.touched">
+    <small>Team ID is required.</small>
+</div>
+<label>Cricketer Name</label>
+<input type="text" name="cricketerName"formControlName="cricketerName"/>
+<div *ngIf="cricketerForm.get('cricketerName')?.invalid && cricketerForm.get('cricketerName')?.touched">
+    <small>Cricketer Name is required.</small>
+</div>
+<label>Age</label>
+<input type="number" name="age"formControlName="age"/>
+<div *ngIf="cricketerForm.get('age')?.invalid && cricketerForm.get('age')?.touched">
+    <small>Age is required.</small>
+</div>
+<label>Nationality</label>
+<input type="text" name="nationality"formControlName="nationality"/>
+<div *ngIf="cricketerForm.get('nationality')?.invalid && cricketerForm.get('nationality')?.touched">
+    <small>Nationality is required.</small>
+</div>
+<label>Experience</label>
+<input type="text" name="experience"formControlName="experience"/>
+<div *ngIf="cricketerForm.get('experience')?.invalid && cricketerForm.get('experience')?.touched">
+    <small>Experience is required.</small>
+</div>
+<label>Role</label>
+<input type="text" name="role"formControlName="role"/>
+<div *ngIf="cricketerForm.get('role')?.invalid && cricketerForm.get('role')?.touched">
+    <small>Role is required.</small>
+</div>
+<label>Total Runs</label>
+<input type="number" name="totalRuns"formControlName="totalRuns"/>
+<div *ngIf="cricketerForm.get('totalRuns')?.invalid && cricketerForm.get('totalRuns')?.touched">
+    <small>Total Runs is required.</small>
+</div>
+<label>Total Wickets</label>
+<input type="number" name="totalWickets"formControlName="totalWickets"/>
+<div *ngIf="cricketerForm.get('totalWickets')?.invalid && cricketerForm.get('totalWickets')?.touched">
+    <small>Total Wickets is required.</small>
+</div>
+
+<button type="submit" [disabled]="cricketerForm.invalid">Submit</button>
+<button type="button" (click)="resetForm()">Reset</button>
+<div *ngIf="successMessage" class="success">
+    <p>{{successM}}</p></div>
+<div *ngIf="errorMessage" class="error">
+    <p>{{errorM}}</p>
+</div>
+
+
